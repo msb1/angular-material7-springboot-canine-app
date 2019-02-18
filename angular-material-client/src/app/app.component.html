@@ -1,0 +1,68 @@
+
+  <mat-toolbar color="primary" class="mat-elevation-z10" layout="row" >
+  <mat-toolbar-row>
+    <span>
+      <button mat-button (click)="sidenav.open()" ><mat-icon>menu</mat-icon></button>
+      Cool Canines of Notoriety
+    </span>
+
+    <span class="example-spacer"></span>
+
+
+
+    <input matInput #search type="search" [placeholder]="filled?'Search':''" [ngClass]="{'filled':filled}"
+          (click)="filled=!filled" (blur)="filled=search.value?true:false" [formControl]="queryField"
+          [matAutocomplete]="auto" (change)="onQueryChange()" >
+    <!-- <button class="close" *ngIf="filled" (click)="search.value='';filled=false">X</button>-->
+
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="search.value=''; onClose()" >
+      <mat-option *ngFor="let canine of canines"  [routerLink]="['/canine-detail', canine.id]">
+        {{canine.dogBreed}}
+      </mat-option>
+    </mat-autocomplete>
+
+    <button mat-button [routerLink]="['/canine-home']" >Home</button>
+    <button mat-button [routerLink]="['/about']">About</button>
+    <button mat-button [routerLink]="['/contact']">Contact</button>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" align="end" class="mat-elevation-z6" layout="row" fixedInViewport="true"
+        mat-component-id="left" style="top: 40px; width: 250px !important;">
+
+    <mat-toolbar color="accent" class="mat-elevation-z10" >
+      <mat-toolbar-row>
+        <span>Canine Selector</span>
+
+        <span class="example-spacer"></span>
+        <button mat-button (click)="sidenav.close()" >
+          <mat-icon class="mat-default-theme" class="material-icons">&#xE5CD;</mat-icon>
+        </button>
+
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-grid-list cols='4'>
+      <mat-grid-tile *ngFor="let letter of alphabet" >
+        <h3 class='letter' (click)="sidenav.close()" [routerLink]="['/canine-list', letter]">{{letter}}</h3>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+  </mat-sidenav>
+
+    <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+
+  <mat-toolbar style='background-color:transparent'>
+    <span class='spacer'></span>
+      <h4 style='color: gray; font-size: 10pt'>© 2018 BarnWaldo.com. All Rights Reserved..</h4>
+    <span class='spacer'></span>
+  </mat-toolbar>
+
+

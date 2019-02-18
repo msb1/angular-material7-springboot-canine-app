@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+// @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import url('https://fonts.googleapis.com/css?family=Material+Icons');
+
+// always include only once per project
+@include mat-core();
+
+// import our custom theme
+@import 'theme.scss';
+
+// specify theme class eg: <body class="my-theme"> ... </body>
+.my-theme {
+
+  // use our theme with angular-material-theme mixin
+  @include angular-material-theme($theme);
+}
+
+html, body {
+  min-height: 100%;
+}
+
+// some basic resets
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+.app {
+  height: 100vh; // emmet h100vh
+}
+
+mat-toolbar {
+  z-index: 10; // emmet z10
+}
+
+mat-sidenav {
+  width: 40vw; // emmet w40vw
+}
+
+
+
+

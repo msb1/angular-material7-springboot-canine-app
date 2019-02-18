@@ -1,0 +1,11 @@
+<h1>Cool Canines of the {{letter}} Family</h1>
+
+<mat-grid-list cols="4" rowHeight="250px" gutterSize='4px'>
+  <mat-grid-tile *ngFor="let canine of canines" >
+    <img  style='height: 75%; width: 75%; object-fit: contain;' src="{{canine.dogImageUrl}}" alt="{{canine.dogBreed}}"
+          [routerLink]="['/canine-detail', canine.id]">
+    <mat-grid-tile-footer style="background: transparent;">
+      <h3 style='color: gray;'>{{canine.dogBreed}}</h3>
+    </mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>

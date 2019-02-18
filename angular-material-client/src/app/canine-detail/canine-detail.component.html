@@ -1,0 +1,53 @@
+<div class="card-div">
+<mat-card>
+
+    <mat-card-header>
+      <mat-card-title style="font: 400 44px/1.3 'Oleo Script', Helvetica, sans-serif;">{{canine.dogBreed}} </mat-card-title>
+
+      <mat-card-subtitle>
+        <h3>{{canine.dogDescription}}</h3>
+      </mat-card-subtitle>
+
+      <img mat-card-avatar src="{{canine.giphyUrl}}" alt="{{canine.dogBreed}}" style='height:100px; width:100px;'>
+    </mat-card-header>
+    <mat-card-content>
+
+      <ul style="list-style-type:none">
+
+        <li>
+          <h3>Height: {{canine.dogHeight}}</h3>
+        </li>
+        <li>
+          <h3>Weight: {{canine.dogWeight}}</h3>
+        </li>
+        <li>
+          <h3>Temperament: {{canine.dogTemperament}}</h3>
+        </li>
+        <li>
+          <h3>Group: {{canine.dogGroup}}</h3>
+        </li>
+        <li>
+          <h3>Life Expectancy: {{canine.dogExpectancy}}</h3>
+        </li>
+        <li>
+          <h3>Popularity: {{canine.dogPopularity}}</h3>
+        </li>
+        <li>
+          <h3>About:</h3><h3>{{canine.dogAbout}}</h3>
+        </li>
+        <li>
+          <br/><img style='height: 75%; width: 75%; display: block; margin-left: auto; margin-right: auto'
+                    src="{{canine.dogImageUrl}}" alt="{{canine.dogBreed}}">
+        </li>
+
+      </ul>
+
+
+    </mat-card-content>
+
+
+    <mat-card-footer>
+    </mat-card-footer>
+
+</mat-card>
+</div>

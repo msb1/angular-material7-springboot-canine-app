@@ -1,0 +1,33 @@
+mat-card{
+  width: 25%;
+  border: 2px solid gray;
+  border-style: inset;
+  margin-top: 20px;
+}
+
+mat-card-avatar{
+  height: 100px;
+  width: 100px;
+}
+
+.card-div{
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+}
+
+mat-card-title {
+  color:#3F51B5;
+  text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+}
+
+h2{
+  color: #3F51B5;
+  font-style: italic;
+}
+
+h3{
+  justify-content: left;
+  text-align: left;
+  color: darkgray;
+}
